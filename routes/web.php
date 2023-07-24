@@ -18,4 +18,4 @@ use App\Http\Controllers\Admin\AdminComicsController as AdminComicsController;
 Route::get('/', [AdminComicsController::class, 'index']);
 
 
-Route::get('/admin/{id}', [AdminComicsController::class, 'show'])->name('admin.show');
+Route::get('/admin/{comic}', [AdminComicsController::class, 'show'])->name('admin.show');

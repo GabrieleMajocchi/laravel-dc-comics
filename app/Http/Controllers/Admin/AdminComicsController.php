@@ -48,9 +48,9 @@ class AdminComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $id)
+    public function show(Comic $comic)
     {
-        return view('admin.admin', compact('id'));
+        return view('admin.admin', compact('comic'));
     }
 
     /**

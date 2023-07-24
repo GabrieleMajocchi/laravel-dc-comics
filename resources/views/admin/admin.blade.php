@@ -7,5 +7,5 @@
         Welcome, this is Main section area of admin pannel
     </h1>
 
-    <h2>{{$id->title}}</h2>
+    <h2>{{$comic->title}}</h2>
 @endsection
