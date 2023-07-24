@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Admin\ComicsController as ComicsController;
+use App\Http\Controllers\Admin\AdminComicsController as AdminComicsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +15,7 @@ use App\Http\Controllers\Admin\ComicsController as ComicsController;
 */
 
 
-Route::get('/', [ComicsController::class, 'getComics']);
+Route::get('/', [AdminComicsController::class, 'index']);
+
+
+Route::get('/admin/{id}', [AdminComicsController::class, 'show'])->name('admin.show');

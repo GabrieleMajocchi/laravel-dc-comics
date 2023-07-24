@@ -9,5 +9,6 @@
 
     @foreach ($comics as $comic)
         <h5>{{$comic->title}}</h5>
+        <a href="{{route('admin.show', $comic->id)}}">Admin page</a>
     @endforeach
 @endsection
