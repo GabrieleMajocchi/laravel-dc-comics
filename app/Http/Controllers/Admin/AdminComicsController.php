@@ -28,7 +28,7 @@ class AdminComicsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
@@ -39,7 +39,12 @@ class AdminComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newComic = new Comic();
+        $newComic->fill($data);
+        $newComic->save();
+
+        return redirect()->route('admin.show', $newComic->id);
     }
 
     /**
@@ -48,9 +53,10 @@ class AdminComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
+    public function show($id)
     {
-        return view('admin.admin', compact('comic'));
+        $comic = Comic::findOrFail($id);
+        return view('admin.show', compact('comic'));
     }
 
     /**

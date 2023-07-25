@@ -17,5 +17,9 @@ use App\Http\Controllers\Admin\AdminComicsController as AdminComicsController;
 
 Route::get('/', [AdminComicsController::class, 'index']);
 
+Route::get('/admin/create', [AdminComicsController::class, 'create'])->name('admin.create');
+
+Route::post('/admin', [AdminComicsController::class, 'store'])->name('admin.store');
 
 Route::get('/admin/{comic}', [AdminComicsController::class, 'show'])->name('admin.show');
+
