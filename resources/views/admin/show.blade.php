@@ -32,6 +32,14 @@
                 </li>
             </ul>
         </article>
+        <form action="{{ route('admin.destroy', $comic->id) }}" class="d-inline form-terminator" method="POST">
+            @csrf
+            @method('DELETE')
+
+            <button type="submit" class="btn btn-sm btn-warning me-2">
+                Delete
+            </button>
+        </form>
     </div>
 </div>
 

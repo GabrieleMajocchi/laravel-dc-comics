@@ -31,7 +31,10 @@ class AdminComicsController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        $links = config('db.links');
+        $dc = config('db.dc');
+        $sites = config('db.sites');
+        return view('admin.create', compact('links','dc', 'sites'));
     }
 
     /**
@@ -106,6 +109,10 @@ class AdminComicsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        $comic->delete();
+
+        return redirect()->route('welcome');
     }
 }
