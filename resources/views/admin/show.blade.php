@@ -3,18 +3,15 @@
 @section('title', 'Comic info page')
 
 @section('main-section')
+<div class="jumbotron"></div>
+<div class="showBlueBar"></div>
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h1>
-                Comic: {{ $comic->title }}
-            </h1>
-        </div>
-    </div>
-    <div class="row pokemons justify-content-center">
+    <div class="row justify-content-center">
+        <img src="{{ $comic->thumb }}" alt="{{ $comic->title  }}">
+
         <article class="card col-6 p-0 m-3">
 
-            <img src="{{ $comic->thumb }}" class="card-img-top w-25" alt="...">
+            <img src="{{ $comic->thumb }}" class="card-img-top w-25" alt="{{ $comic->title  }}">
             <div class="card-body">
                 <h5 class="card-title">
                     {{ $comic->title  }}

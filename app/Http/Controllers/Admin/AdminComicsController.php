@@ -17,8 +17,11 @@ class AdminComicsController extends Controller
     public function index()
     {
         $comics = Comic::all();
+        $links = config('db.links');
+        $dc = config('db.dc');
+        $sites = config('db.sites');
 
-        return view('welcome', compact('comics'));
+        return view('welcome', compact('links', 'dc', 'sites', 'comics'));
     }
 
     /**
@@ -56,7 +59,10 @@ class AdminComicsController extends Controller
     public function show($id)
     {
         $comic = Comic::findOrFail($id);
-        return view('admin.show', compact('comic'));
+        $links = config('db.links');
+        $dc = config('db.dc');
+        $sites = config('db.sites');
+        return view('admin.show', compact('links', 'dc', 'sites', 'comic'));
     }
 
     /**

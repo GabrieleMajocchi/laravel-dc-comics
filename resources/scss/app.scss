@@ -1,1 +1,199 @@
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
 @import "~bootstrap/scss/bootstrap";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: $textColor;
+
+    &:hover{
+        color: $dcColor;
+    }
+}
+
+li{
+    list-style: none;
+}
+
+
+header{
+    width: 100vw;
+    background-color: $bgWhite;
+
+    img{
+        width: 80px;
+        margin-right: 500px;
+    }
+
+    a{
+        font-size: 0.9rem;
+        color: $textGrey;
+    }
+
+    .navlink{
+        li{
+            margin-right: 1rem;
+        }
+
+        li:hover .blubox{
+            display: block;
+        }
+
+        .blubox{
+            display: none;
+            background-color: $bgDc;
+            height: 5px;
+            width: 100%;
+            position: absolute;
+            bottom: -44px;
+        }
+    }
+}
+
+main{
+    .jumbotron{
+        width: 100%;
+        height: 400px;
+        background-image: url('../img/jumbotron.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .products{
+        background-color: $bgMain;
+        padding-bottom: 1rem;
+    }
+    .current-series, .load-more{
+        background-color: $bgDc;
+        color: $textWhite;
+        padding: 0.5rem 1rem;
+        top: -30px;
+    }
+    .current-series{
+        position: absolute;
+        font-size: 1.5rem;
+        top: -30px;
+    }
+
+    .comics{
+        width: calc(100% / 6 - 1rem);
+        color: $textWhite;
+        margin: 3rem 1rem 0 0;
+        position: relative;
+        cursor: pointer;
+        &:hover img{
+            opacity: 0.2;
+        }
+        span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: (-50% -50%);
+            display: none;
+            z-index: 1;
+        }
+        &:hover span{
+            display: block;
+        }
+    }
+    .comics img{
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .load-more:hover{
+        color: $bgMain;
+    }
+    .blubox{
+        height: 200px;
+        background-color: $bgDc;
+    }
+
+    h2{
+        color: $textWhite;
+    }
+
+    .element img{
+        height: 50px;
+    }
+
+    .element p{
+        color: $textWhite;
+        padding-left: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+footer{
+    background-color: $bgFooter;
+
+    .background{
+        background-image: url(../img/footer-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .top-footer{
+        color: $textWhite;
+        padding: 2rem 0 4rem 0;
+        overflow: hidden;
+        div{
+            margin-right: 2rem;
+        }
+        div h3{
+            margin: 1rem 0;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        div ul{
+            margin: 0;
+            padding: 0;
+        }
+        div li a{
+            color: $textGrey;
+            text-decoration: none;
+            &:hover{
+                color: $dcColor;
+            }
+        }
+        .dc{
+            background-image: url(../img/dc-logo-bg.png);
+            width: 700px;
+            height: 700px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            right: 50px;
+            top: -130px;
+        }
+    }
+
+    .lower-footer{
+        height: 100px;
+        div a{
+            color: $textWhite;
+            padding: 0.5rem 1rem;
+            border: 2px solid $dcColor;
+            &:hover{
+                color: $dcColor;
+            }
+        }
+        div p{
+            color: $dcColor;
+            font-size: 1.3rem;
+            margin: 0 1.3rem;
+        }
+        div img{
+            height: 40px;
+            aspect-ratio: 1;
+            margin: 0 0.8rem;
+            cursor: pointer;
+        }
+    }
+}

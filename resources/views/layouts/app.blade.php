@@ -6,11 +6,15 @@
     <title>@yield('title', 'Laravel App')</title>
 </head>
 <body>
-    
+
+    @include('partials.header')
+
     <main>
         @yield('main-section')
     </main>
-    
-        @vite('resources/js/app.js')
+
+    @include('partials.footer')
+
+    @vite('resources/js/app.js')
 </body>
 </html>
