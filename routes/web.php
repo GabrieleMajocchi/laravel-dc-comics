@@ -23,3 +23,6 @@ Route::post('/admin', [AdminComicsController::class, 'store'])->name('admin.stor
 
 Route::get('/admin/{comic}', [AdminComicsController::class, 'show'])->name('admin.show');
 
+Route::get('/admin/{id}/edit', [AdminComicsController::class, 'edit'])->name('admin.edit');
+
+Route::put('/admin/{id}', [AdminComicsController::class, 'update'])->name('admin.update');
